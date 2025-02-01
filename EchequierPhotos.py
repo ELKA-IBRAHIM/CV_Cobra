@@ -26,9 +26,9 @@ else:
     if not cap0.isOpened():
         print("Impossible d'ouvrir la caméra 0")
     
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        print("Impossible d'ouvrir la caméra 0")
+    cap1 = cv2.VideoCapture(1)
+    if not cap1.isOpened():
+        print("Impossible d'ouvrir la caméra 1")
     
     
     nb_im = 1
@@ -43,7 +43,7 @@ else:
 
         ret1 , frame1 = cap1.read() #Prise de l'image
         if not ret1:
-            print("Erreur lors de la capture de l'image")
+            print("Erreur lors de la capture de l'image[cam1]")
         nom1 = chemin1 + '/Cam1Echequier'+str(nb_im)+'.png' # nom de l'image
         cv2.imwrite(nom1, frame1) # Enregistrer l'image
 
