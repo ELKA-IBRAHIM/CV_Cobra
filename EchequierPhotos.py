@@ -1,6 +1,7 @@
 import os 
 import cv2
 import numpy as np
+import time 
 
 # Chemin ou les photos d'échequier seront enregistrés
 chemin0 = "/home/CobraVision2/Localisation/0PhotosEchequier" 
@@ -53,3 +54,4 @@ else:
         print('Images enregistrées',str(nb_im),'/',str(n)) # exemple: Images enregistrées 1/10
         
         nb_im += 1
+        time.sleep(2) #durée(en secondes) entre deux captures
