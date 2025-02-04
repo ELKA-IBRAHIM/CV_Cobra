@@ -1,0 +1,10 @@
+Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+le temps est moyenné sur 100 mesures 
+ 
+0.32348630428314207 s , résolution: 2592x1944
+0.14439401626586915 s , résolution: 1920x1080
+0.5182589769363404 s , résolution: 3280x2464
+0.13694796562194825 s , résolution: 1640x1232
+0.11410205364227295 s , résolution: 1640x922
+0.09191663265228271 s , résolution: 1280x720
+0.04709982872009277 s , résolution: 640x480
