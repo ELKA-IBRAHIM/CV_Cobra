@@ -12,7 +12,7 @@ if n_cam == 1:
         os.mkdir(chemin0)
         
     
-    n = int(input("Nombre d'images désirée"))
+    n = int(input("Nombre d'images désirées: "))
 
     if n < 10: # Le nombre d'acquisitions doit être au moins égale à 10
         raise ValueError("Calibration impossible avec 0 images")
@@ -50,7 +50,7 @@ elif n_cam == 2:
 
     ## Prise des photos de l'échequier
 
-    n = int(input("Nombre d'images désirée"))
+    n = int(input("Nombre d'images désirées: "))
 
     if n < 10: # Le nombre d'acquisitions doit être au moins égale à 10
         raise ValueError("Calibration impossible avec 0 images")
