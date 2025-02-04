@@ -17,7 +17,6 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10):
         
     picam2 = Picamera2()
 
-    modele = picam2.global_camera_info()[0]['Model']
 
     picam2.configure(picam2.create_preview_configuration({'size':(WIDTH,HEIGH)}))
     picam2.start()
