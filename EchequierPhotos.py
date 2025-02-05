@@ -1,5 +1,5 @@
 from picamera2 import Picamera2
-
+import modele_cam
 import os 
 import cv2
 import numpy as np
@@ -7,7 +7,11 @@ import time
 
 n_cam = int(input("nombre de caméras 1 ou 2 : "))
 if n_cam == 1:
-    chemin0 = os.getcwd()+"/0PhotosEchequier" 
+        
+
+    modele0 = modele_cam.modele(0)
+
+    chemin0 = os.getcwd()+"/0_"+modele0+"PhotosEchequier" 
     if not os.path.exists(chemin0): #Si le répertoire n'existe pas
         os.mkdir(chemin0)
         
@@ -34,10 +38,11 @@ if n_cam == 1:
             nb_im += 1
             time.sleep(2) #durée(en secondes) entre deux captures
 elif n_cam == 2:
-        
+    modele0 = modele_cam.modele(0)
+    modele1 =  modele_cam.modele(1)
     # Chemin ou les photos d'échequier seront enregistrés
-    chemin0 = os.getcwd()+"/0PhotosEchequier" 
-    chemin1 = os.getcwd()+"/1PhotosEchequier" 
+    chemin0 = f"{os.getcwd()}/0_{modele0}PhotosEchequier" 
+    chemin1 = f"{os.getcwd()}/1_{modele1}PhotosEchequier" 
 
 
 
