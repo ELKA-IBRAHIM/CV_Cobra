@@ -1,0 +1,11 @@
+camera: V2 
+Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+le temps est moyenné sur 100 mesures 
+ 
+0.3784146785736084 s , résolution: 2592x1944
+0.1687976598739624 s , résolution: 1920x1080
+0.640972352027893 s , résolution: 3280x2464
+0.15598957538604735 s , résolution: 1640x1232
+0.1327976942062378 s , résolution: 1640x922
+0.0973405122756958 s , résolution: 1280x720
+0.08149943351745606 s , résolution: 640x480

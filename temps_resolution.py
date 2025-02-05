@@ -4,12 +4,13 @@ import time
 from pyapriltags import Detector
 import numpy as np
 import os
-modeles = camera_models = {
-    "imx219": "Pi Camera V2",
-    "imx708": "Pi Camera V3",
-    "imx708_wide": "Pi Camera V3 Wide"}
 
-def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10):
+modeles = camera_models = {
+    "imx219": "V2 ",
+    "imx708": "V3 ",
+    "imx708_wide": "V3W"}
+
+def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     """
     Renvoie le temps d'acquisition et de traitement en fonction de la résolotion choisie 
     et le nombre mesures pour moyenner cette durée
@@ -111,8 +112,8 @@ modele = modeles[picam2.global_camera_info()[0]['Model']]
 picam2.stop()
 picam2.close()
 
-
-with open("temps_f_executions.txt", "w") as fichier:
+nom = f"{modele}_temps_resolution"
+with open(nom, "w") as fichier:
     fichier.write("camera: "+modele+"\n")
     fichier.write("Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.\n")
     fichier.write("le temps est moyenné sur 100 mesures \n \n")
