@@ -33,6 +33,7 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
 
 
     picam2.configure(picam2.create_preview_configuration({'size':(WIDTH,HEIGH)}))
+    time.sleep(2)
     picam2.start()
 
     at_detector = Detector(families="tag36h11",nthreads=1,quad_sigma=0.0,refine_edges=1,\
@@ -114,7 +115,7 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     picam2.stop()
     picam2.close()
     
-    return(str(temps/N)+' s , '+ 'résolution: '+str(HEIGH)+'x'+str(WIDTH))
+    return(f"{temps/N} s ,résolution: {HEIGH}x{WIDTH}  tags reconnus:{n} {N} mesures")
 
 
 Resolutions = [(640,480), (1280,720) , (2592, 1944), (1920, 1080), (4608,2592)]
@@ -130,9 +131,8 @@ nom = f"/home/CobraVision2/Localisation/CV_Cobra/{modele}_temps_resolution"
 
 with open(nom, "a") as fichier:
     fichier.write(f"--------Date de la mesure: {date_actuelle}---------\n")
-    fichier.write("camera: "+modele+"\n")
+    fichier.write(f"camera: {modele}\n")
     fichier.write("Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.\n")
-    fichier.write("le temps est moyenné sur 100 mesures  \n")
 
     for resolution in Resolutions:
         print(f"*-*-*mesure pour la résolution: {resolution[0]}x{resolution[1]}*-*-*")

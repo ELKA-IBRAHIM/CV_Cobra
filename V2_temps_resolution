@@ -1,18 +1,8 @@
 --------Date de la mesure: 2025-02-06---------
 camera: V2
 Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
-le temps est moyenné sur 100 mesures  
-0.012184906005859374 s , résolution: 640x480
-0.04497494697570801 s , résolution: 1280x720
-0.25495595932006837 s , résolution: 2592x1944
-0.12182350158691406 s , résolution: 1920x1080
-0.67628493309021 s , résolution: 4608x2592
---------Date de la mesure: 2025-02-06---------
-camera: V2
-Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
-le temps est moyenné sur 100 mesures  
-0.011846351623535156 s , résolution: 640x480
-0.045359468460083006 s , résolution: 1280x720
-0.25801174640655516 s , résolution: 2592x1944
-0.12073533535003662 s , résolution: 1920x1080
-0.6740358114242554 s , résolution: 4608x2592
+0.01268320083618164 s ,résolution: 640x480  tags reconnus:1 10 mesures
+0.053873753547668456 s ,résolution: 1280x720  tags reconnus:6 10 mesures
+0.2906928777694702 s ,résolution: 2592x1944  tags reconnus:6 10 mesures
+0.13078978061676025 s ,résolution: 1920x1080  tags reconnus:6 10 mesures
+0.8112784862518311 s ,résolution: 4608x2592  tags reconnus:5 10 mesures
