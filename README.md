@@ -29,6 +29,11 @@ EL KASSIMI IBRAHIM :)
 
 - **Entrée:**
 - N: Le nombre d'expériences pour moyenner la durée de traitement.
+- **Sortie**
+- Création (ou ecriture sur ) d'un fichier txt (ex : V2_temps_resolution.txt) contenant:
+- - La date de la mesure.
+- - la caméra utilisée
+- - les résultats des mesures.
 
 ## modele_cam(.py)
 
