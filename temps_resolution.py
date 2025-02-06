@@ -100,21 +100,27 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     return(str(temps/N)+' s , '+ 'résolution: '+str(HEIGH)+'x'+str(WIDTH))
 
 
-Resolutions = [(2592, 1944), (1920, 1080), (3280, 2464), (1640, 1232), (1640,922), (1280,720), (640,480)]
+Resolutions = [(640,480), (1280,720) , (2592, 1944), (1920, 1080), (4608,2592)]
 
 
 modele = modele_cam.modele() #nom de la caméra utilisée.
 
-nom = f"{modele}_temps_resolution"
-with open(nom, "w") as fichier:
+
+current_time = time.localtime()
+date_actuelle = time.strftime("%Y-%m-%d", current_time)
+
+nom = f"/home/CobraVision2/Localisation/CV_Cobra/{modele}_temps_resolution"
+
+with open(nom, "a") as fichier:
+    fichier.write(f"--------Date de la mesure: {date_actuelle}---------\n")
     fichier.write("camera: "+modele+"\n")
     fichier.write("Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.\n")
-    fichier.write("le temps est moyenné sur 100 mesures \n \n")
+    fichier.write("le temps est moyenné sur 100 mesures  \n")
 
-    c = 1
     for resolution in Resolutions:
         print(f"*-*-*mesure pour la résolution: {resolution[0]}{resolution[1]}*-*-*")
         fichier.write(temps_f_resolution(resolution[0], resolution[1])+"\n")
+
 
 
       

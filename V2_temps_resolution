@@ -1,0 +1,9 @@
+--------Date de la mesure: 2025-02-06---------
+camera: V2
+Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+le temps est moyenné sur 100 mesures  
+0.07674386501312255 s , résolution: 640x480
+0.0824610710144043 s , résolution: 1280x720
+0.32795891761779783 s , résolution: 2592x1944
+0.14591410160064697 s , résolution: 1920x1080
+0.8266526222229004 s , résolution: 4608x2592
