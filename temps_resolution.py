@@ -129,6 +129,7 @@ date_actuelle = time.strftime("%Y-%m-%d", current_time)
 
 nom = f"/home/CobraVision2/Localisation/CV_Cobra/{modele}_temps_resolution"
 
+N = int(input("Choix de nombre d'éxpériences pour moyenner la durée: "))
 with open(nom, "a") as fichier:
     fichier.write(f"--------Date de la mesure: {date_actuelle}---------\n")
     fichier.write(f"camera: {modele}\n")
@@ -136,7 +137,7 @@ with open(nom, "a") as fichier:
 
     for resolution in Resolutions:
         print(f"*-*-*mesure pour la résolution: {resolution[0]}x{resolution[1]}*-*-*")
-        fichier.write(temps_f_resolution(resolution[0], resolution[1])+"\n")
+        fichier.write(temps_f_resolution(resolution[0], resolution[1], N)+"\n")
 
 
 
