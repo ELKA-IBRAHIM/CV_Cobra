@@ -127,7 +127,7 @@ modele = modele_cam.modele() #nom de la caméra utilisée.
 current_time = time.localtime()
 date_actuelle = time.strftime("%Y-%m-%d", current_time)
 
-nom = f"/home/CobraVision2/Localisation/CV_Cobra/{modele}_temps_resolution"
+nom = f"/home/CobraVision2/Localisation/CV_Cobra/{modele}_temps_resolution.txt"
 
 N = int(input("Choix de nombre d'éxpériences pour moyenner la durée: "))
 with open(nom, "a") as fichier:
