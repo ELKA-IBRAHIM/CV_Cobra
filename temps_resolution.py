@@ -6,11 +6,27 @@ import numpy as np
 import os
 import modele_cam
 
+"""
+- Le programme reconnait la caméra utilisée, ainsi que la date de l'expérience.
+- On renseigne la résolution 
+- On renseigne N: le nombre de mesures; on ne peut pas se baser sur le temps de calcul pour une seule expérience
+  donc on prend la durée moyenne de N expériences.
+  EXEMPLE DU FICHIER SAUVEGARDÉ:
+    --------Date de la mesure: 2025-02-06---------
+    camera: V2
+    Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+    le temps est moyenné sur 100 mesures  
+    0.012184906005859374 s , résolution: 640x480
+    0.04497494697570801 s , résolution: 1280x720
+    0.25495595932006837 s , résolution: 2592x1944
+    0.12182350158691406 s , résolution: 1920x1080
+    0.67628493309021 s , résolution: 4608x2592
+"""
 
 def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     """
-    Renvoie le temps d'acquisition et de traitement en fonction de la résolotion choisie 
-    et le nombre mesures pour moyenner cette durée
+    HEIGH, WIDTH : la resolution choisie, 3280*2464 par défaut
+    N : Le nombre d'expérience (La durrée prise sera la moyenne sur les N espériences)
     """
         
     picam2 = Picamera2()
