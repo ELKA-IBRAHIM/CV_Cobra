@@ -115,7 +115,7 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     picam2.stop()
     picam2.close()
     
-    return(f"{temps/N} s ,résolution: {HEIGH}x{WIDTH}  tags reconnus:{n} {N} mesures")
+    return(f"{temps/N} s ,résolution: {HEIGH}x{WIDTH}  tags reconnus:{n} |temps moyyené sur {N} mesures")
 
 
 Resolutions = [(640,480), (1280,720) , (2592, 1944), (1920, 1080), (4608,2592)]

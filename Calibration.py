@@ -17,9 +17,10 @@ objp[:,:2] = np.mgrid[0:10,0:7].T.reshape(-1,2)
 objpoints = [] # 3d point in real world space
 imgpoints = [] # 2d points in image plane.
 
-PhotosEchequier = input("nom du fichier contant les images de l'échequier")
+PhotosEchequier = input("nom du fichier contant les images de l'échequier :")
 
 chemin = f"/home/CobraVision2/Localisation/CV_Cobra/{PhotosEchequier}"
+modele = chemin.split('_')[1]
 images = glob.glob(f"{chemin}/*.png")  
 print(f"calibration avec {len(images)} images")
 
@@ -38,12 +39,12 @@ for fname in images:
 #gray = cv.imread(images[0], cv.IMREAD_GRAYSCALE).shape
 ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
-fichier_calibrationn =  f"/home/CobraVision2/Localisation/CV_Cobra/Calibration"
+fichier_calibrationn =  f"/home/CobraVision2/Localisation/CV_Cobra/Calibration.txt"
 if ret :
     current_time = time.localtime()
     date_actuelle = time.strftime("%Y-%m-%d", current_time)
 
     with open(fichier_calibrationn, "a") as f:
-        f.write(f"--------Calibration--{date_actuelle}---------\n")
+        f.write(f"--------Calibration--{date_actuelle}-----camera {modele}----\n")
         f.write(f"mtx = {mtx}\n")
         f.write(f"dist = {dist}\n")        

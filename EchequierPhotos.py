@@ -11,7 +11,7 @@ if n_cam == 1:
 
     modele0 = modele_cam.modele(0)
 
-    chemin0 = os.getcwd()+"/0_"+modele0+"PhotosEchequier" 
+    chemin0 = os.getcwd()+"/0_"+modele0+"_PhotosEchequier" 
     if not os.path.exists(chemin0): #Si le répertoire n'existe pas
         os.mkdir(chemin0)
         
@@ -22,6 +22,7 @@ if n_cam == 1:
         raise ValueError("Calibration impossible avec 0 images")
     else:
         cam0 = Picamera2(0)
+        
         cam0.configure(cam0.create_still_configuration())
         time.sleep(1)  
         cam0.start()
@@ -30,10 +31,10 @@ if n_cam == 1:
         nb_im = 1
         while nb_im <= n:
 
-            nom0 = chemin0 + '/cam0Echequier'+str(nb_im)+'.png' # nom de l'image
+            nom0 = chemin0 + f"/{modele0}_cam0Echequier{nb_im}.png"  # nom de l'image
             cam0.capture_file(nom0) # Enregistrer l'image
 
-            print('Images enregistrées',str(nb_im),'/',str(n)) # exemple: Images enregistrées 1/10
+            print(f"Images enregistrées: {nb_im}/{n}") # exemple: Images enregistrées 1/10
             
             nb_im += 1
             time.sleep(2) #durée(en secondes) entre deux captures
@@ -75,11 +76,11 @@ elif n_cam == 2:
         while nb_im <= n:
 
             
-            nom0 = chemin0 + '/cam0Echequier'+str(nb_im)+'.png' # nom de l'image
+            nom0 = chemin0 + f"/{modele0}_cam0Echequier{nb_im}.png" # nom de l'image
             cam0.capture_file(nom0)
             
             
-            nom1 = chemin1 + '/cam1Echequier'+str(nb_im)+'.png' # nom de l'image
+            nom1 = chemin1 + f"/{modele1}_cam1Echequier{nb_im}.png" # nom de l'image
             cam1.capture_file(nom1) # Enregistrer l'image
 
 
