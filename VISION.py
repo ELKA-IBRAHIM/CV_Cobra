@@ -1,3 +1,15 @@
+intro = """
+  ____      _                 ___ _               _     _           
+ / ___|___ | |__  _ __ __ _  |_ _| |__  _ __ __ _| |__ (_)_ __ ___  
+| |   / _ \| '_ \| '__/ _` |  | || '_ \| '__/ _` | '_ \| | '_ ` _ \ 
+| |__| (_) | |_) | | | (_| |  | || |_) | | | (_| | | | | | | | | | |
+ \____\___/|_.__/|_|  \__,_| |___|_.__/|_|  \__,_|_| |_|_|_| |_| |_|
+
+
+"""
+print(intro)
+
+
 text_calibration = """ 
 
   ____      _ _ _               _   _              
@@ -27,10 +39,10 @@ text_temps_f_resolution = """
 
 """
 text = f"Choisir: \
-    \n 1 : Prendre des images d'un échequier pour calibraer la caméra \
-    \n 2 : Calibration à partir d'un répertoire d'images \
-    \n 3 : Calcul du temps de traitement en fonction de la résolution  \
-    \n Votre choix : "
+    \n \n 1 : Prendre des images d'un échequier pour calibraer la caméra \
+    \n \n 2 : Calibration à partir d'un répertoire d'images \
+    \n \n 3 : Calcul du temps de traitement en fonction de la résolution  \
+    \n \n Votre choix : "
 
 choix = input(text)
 
