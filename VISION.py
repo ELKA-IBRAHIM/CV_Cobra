@@ -54,7 +54,7 @@ if choix in ['1', ' 1']:
     print(text_Echequier)
     from EchequierPhotos import echequier_photos
     echequier_photos()
-elif choix in [' 2', ' 2']:
+elif choix in [' 2', '2']:
     print(text_calibration)
     from Calibration import calibration
     calibration()

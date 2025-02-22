@@ -22,7 +22,7 @@ dist=np.array([ 0.16388869,-0.21043407,0.00532856,-0.00619909,-0.15718788])
 mtx=np.array([[fx,0,cx],[0,fy,cy],[0,0,1]]) #matrice de la camera
 
 #Positions des tags dans l'environnement
-listePoints3D = {0:(0,0,0),11:(0.70,0,0),12:(0,-0.90,0),13:(0.70,-0.90,0), 5:(0.70,-0.93,0), 17 : ((0.70,-0.33,0))}
+listePoints3D = {2:(0.194,0,0),4:(0,0.235,0),15:(0.194,0.235,0), 0:(0,0,0) }
 
 def Detection_Tags():
     img=cv2.cvtColor(picam2.capture_array(),cv2.COLOR_BGR2GRAY) #prise d'une photo puis correction

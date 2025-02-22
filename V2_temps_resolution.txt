@@ -22,3 +22,16 @@ Résultats de la mesure de temps d'acquition et de traitement en fonction de la 
 0.2982952912648519 s ,résolution: 2592x1944  tags reconnus:5 |temps moyyené sur 15 mesures
 0.13023115793863932 s ,résolution: 1920x1080  tags reconnus:5 |temps moyyené sur 15 mesures
 0.7411288897196452 s ,résolution: 4608x2592  tags reconnus:5 |temps moyyené sur 15 mesures
+--------Date de la mesure: 2025-02-14---------
+camera: V2
+Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+0.026631379127502443 s ,résolution: 640x480  tags reconnus:0 |temps moyyené sur 20 mesures
+0.044914495944976804 s ,résolution: 1280x720  tags reconnus:2 |temps moyyené sur 20 mesures
+--------Date de la mesure: 2025-02-14---------
+camera: V2
+Résultats de la mesure de temps d'acquition et de traitement en fonction de la résolution.
+0.020746493339538576 s ,résolution: 640x480  tags reconnus:0 |temps moyyené sur 20 mesures
+0.04624031782150269 s ,résolution: 1280x720  tags reconnus:3 |temps moyyené sur 20 mesures
+0.3284734606742859 s ,résolution: 2592x1944  tags reconnus:4 |temps moyyené sur 20 mesures
+0.127310311794281 s ,résolution: 1920x1080  tags reconnus:3 |temps moyyené sur 20 mesures
+0.9061076879501343 s ,résolution: 4608x2592  tags reconnus:2 |temps moyyené sur 20 mesures

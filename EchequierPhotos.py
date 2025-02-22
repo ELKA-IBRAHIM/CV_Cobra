@@ -35,7 +35,7 @@ if n_cam == 1:
     
 
     
-    cam0 = Picamera2(0)
+    cam0 = Picamera2(camera_num=0)
     
     cam0.configure(cam0.create_preview_configuration({'size':(WIDTH,HEIGH)}))
 
@@ -45,16 +45,20 @@ if n_cam == 1:
 
     nb_im = 1
     while nb_im <= n:
-
+        
         nom0 = chemin0 + f"/{modele0}_cam0Echequier{nb_im}.png"  # nom de l'image
         cam0.capture_file(nom0) # Enregistrer l'image
 
         print(f"Images enregistrées: {nb_im}/{n}") # exemple: Images enregistrées 1/10
         
         nb_im += 1
-        time.sleep(2) #durée(en secondes) entre deux captures
+        time.sleep(2)
+        print("be ready")
+        time.sleep(2)
+         #durée(en secondes) entre deux captures
 elif n_cam == 2:
     modele0 = modele_cam.modele(0)
+    print("here")
     modele1 =  modele_cam.modele(1)
     # Chemin ou les photos d'échequier seront enregistrés
     chemin0 = os.getcwd()+f"/0_{modele0}_{str(WIDTH)}x{str(HEIGH)}Echequier"
@@ -77,12 +81,12 @@ elif n_cam == 2:
     if n < 10: # Le nombre d'acquisitions doit être au moins égale à 10
         raise ValueError("Calibration impossible avec 0 images")
     else:
-        cam0 = Picamera2(0)
+        cam0 = Picamera2(camera_num=0)
         cam0.configure(cam0.create_preview_configuration({'size':(WIDTH,HEIGH)}))
         time.sleep(1)
         cam0.start()
         time.sleep(1)
-        cam1 = Picamera2(1)
+        cam1 = Picamera2(camera_num=1)
         cam1.configure(cam1.create_preview_configuration({'size':(WIDTH,HEIGH)}))
         time.sleep(1)  
         cam1.start()

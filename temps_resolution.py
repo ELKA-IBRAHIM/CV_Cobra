@@ -49,7 +49,7 @@ def temps_f_resolution(HEIGH = 3280, WIDTH = 2464, N = 10 ):
     mtx=np.array([[fx,0,cx],[0,fy,cy],[0,0,1]]) #matrice de la camera
 
     #Positions des tags dans l'environnement
-    listePoints3D = {0:(0,0,0),1:(0.70,0,0),2:(0,-0.90,0),3:(0.70,-0.90,0), 4:(0.70,-0.93,0),5:(0.70,-1,0), 6 : ((0.70,-0.33,0))}
+    listePoints3D = {0:(0,0,0),1:(0.70,0,0),2:(0,-0.90,0),3:(0.70,-0.90,0), 4:(0.70,-0.93,0),5:(0.70,-1,0), 6 : (0.70,-0.33,0), 15:(12,28,0)}
 
     def Detection_Tags():
         img=cv2.cvtColor(picam2.capture_array(),cv2.COLOR_BGR2GRAY) #prise d'une photo puis correction
