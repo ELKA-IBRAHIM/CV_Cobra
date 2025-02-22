@@ -56,6 +56,8 @@ if n_cam == 1:
         print("be ready")
         time.sleep(2)
          #durée(en secondes) entre deux captures
+    cam0.stop()
+    cam0.close()
 elif n_cam == 2:
     modele0 = modele_cam.modele(0)
     print("here")
