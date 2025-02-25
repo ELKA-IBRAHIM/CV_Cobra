@@ -15,7 +15,7 @@ text_resolution = f"Choisir une résolution parmi les suivantes:\
     \n 5 : {Resolutions['5']} \
     \n Votre choix : "
 choix_resolution = input(text_resolution)
-assert choix_resolution in ['1','2','3','4'], "Choix impossible, choisir 1, 2, 3 ou 4"
+assert choix_resolution in ['1','2','3','4', '5'], "Choix impossible, choisir 1, 2, 3 ou 4"
 WIDTH, HEIGH = Resolutions[choix_resolution]
 
 # Demande du nombre de caméras utilisées.
@@ -46,15 +46,15 @@ if n_cam == 1:
     nb_im = 1
     while nb_im <= n:
         
+        print("be ready")
+        time.sleep(2)
+        
         nom0 = chemin0 + f"/{modele0}_cam0Echequier{nb_im}.png"  # nom de l'image
         cam0.capture_file(nom0) # Enregistrer l'image
 
         print(f"Images enregistrées: {nb_im}/{n}") # exemple: Images enregistrées 1/10
         
         nb_im += 1
-        time.sleep(2)
-        print("be ready")
-        time.sleep(2)
          #durée(en secondes) entre deux captures
     cam0.stop()
     cam0.close()

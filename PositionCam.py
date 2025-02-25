@@ -5,30 +5,33 @@ from pyapriltags import Detector
 import numpy as np
 
 picam2 = Picamera2()
-WIDTH,HEIGH=3280,2464
+WIDTH,HEIGH = 640,480
 picam2.configure(picam2.create_preview_configuration({'size':(WIDTH,HEIGH)}))
 picam2.start()
 
 at_detector = Detector(families="tag36h11",nthreads=1,quad_sigma=0.0,refine_edges=1,\
 decode_sharpening=0.25,debug=0)
 
-fx=2.54535633e+03
-fy=2.54786131e+03
-cx=1.56751977e+03
-cy=1.27877378e+03
+fx = 1.63609203e+04
+fy = 1.64823329e+04
+cx = 1.98558384e+02
+cy = 3.06937200e+02
 
 #coefficients de distorsion de la camera
-dist=np.array([ 0.16388869,-0.21043407,0.00532856,-0.00619909,-0.15718788]) 
-mtx=np.array([[fx,0,cx],[0,fy,cy],[0,0,1]]) #matrice de la camera
+mtx = np.array([[fx, 0.00000000e+00, cx],
+ [0.00000000e+00, fy, cy],
+ [0.00000000e+00, 0.00000000e+00, 1.00000000e+00]])
+dist = np.array([[-4.80825453e+00, -6.12813064e+03 , 4.63986387e-01 , 2.08237158e-03
+, -5.28829533e+01]])
 
 #Positions des tags dans l'environnement
-listePoints3D = {2:(0.194,0,0),4:(0,0.235,0),15:(0.194,0.235,0), 0:(0,0,0) }
+listePoints3D = {0:(0,0,0)}
 
 def Detection_Tags():
     img=cv2.cvtColor(picam2.capture_array(),cv2.COLOR_BGR2GRAY) #prise d'une photo puis correction
     img_undistorded = cv2.undistort(img, mtx, dist, None, newCameraMatrix=mtx)
     #indication de la taille des tags, lancement de la detection
-    tags=at_detector.detect(img_undistorded,estimate_tag_pose=True,camera_params=[fx,fy,cx,cy],tag_size=0.173) 
+    tags=at_detector.detect(img_undistorded,estimate_tag_pose=True,camera_params=[fx,fy,cx,cy],tag_size=0.174) 
     return tags
 
 def calculAngles(R):
@@ -45,7 +48,6 @@ def calculAngles(R):
     return np.degrees(np.array([x, y, z]))
 
 
-ti=time.time()
 matrice=np.array([[-1,0,0],[0,1,0],[0,0,1]])
 def localisation():
     """Renvoie:
@@ -63,7 +65,7 @@ def localisation():
     angleMoyen=np.array([0,0,0],dtype='float64')
     
     for tag in tags:
-
+        
         angles.append(np.array(calculAngles(tag.pose_R)))
         
         pose=np.dot(np.transpose(tag.pose_R),tag.pose_t)
@@ -88,8 +90,7 @@ def localisation():
         return(positionMoyenne[0], positionMoyenne[1], positionMoyenne[2], angleMoyen[2])
         
     
-    tf=time.time()
-    print("temps",str(tf-ti),"secondes")
-    ti=tf
+    
 while True:
     print(localisation())
+    time.sleep(2)
