@@ -9,7 +9,6 @@ intro = """
 """
 print(intro)
 
-
 text_calibration = """ 
 
   ____      _ _ _               _   _              

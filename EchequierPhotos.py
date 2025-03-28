@@ -5,17 +5,15 @@ import cv2
 import numpy as np
 import time 
 
-Resolutions = {'1': (640,480), '2': (1280,720) , '3':(2592, 1944), '4' : (1920, 1080), '5': (4608,2592)}
+Resolutions = {'1': (1536, 864), '2': (2304,1296) , '3':(4608,2592)}
 
 text_resolution = f"Choisir une résolution parmi les suivantes:\
     \n 1 : {Resolutions['1']} \
     \n 2 : {Resolutions['2']} \
     \n 3 : {Resolutions['3']} \
-    \n 4 : {Resolutions['4']} \
-    \n 5 : {Resolutions['5']} \
     \n Votre choix : "
 choix_resolution = input(text_resolution)
-assert choix_resolution in ['1','2','3','4', '5'], "Choix impossible, choisir 1, 2, 3 ou 4"
+assert choix_resolution in ['1','2','3'], "Choix impossible, choisir 1, 2, 3 ou 4"
 WIDTH, HEIGH = Resolutions[choix_resolution]
 
 # Demande du nombre de caméras utilisées.

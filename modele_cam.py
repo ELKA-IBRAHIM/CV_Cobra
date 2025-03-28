@@ -10,3 +10,4 @@ def modele(n:int=0):
         picam2.stop()
         picam2.close()
         return modele
+modele(0)
